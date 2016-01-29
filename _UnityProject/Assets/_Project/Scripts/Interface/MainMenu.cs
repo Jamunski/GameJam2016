@@ -35,36 +35,22 @@ public class MainMenu : MonoBehaviourSubject
         m_OptionsMenuCanvas = GameObject.Find("OptionsMenu");
         m_InputMenuCanvas = GameObject.Find("InputMenu");
         m_VideoMenuCanvas = GameObject.Find("VideoMenu");
-        m_NewGameMenuCanvas.SetActive(false);
-        m_LoadGameMenuCanvas.SetActive(false);
         m_LevelSelectMenuCanvas.SetActive(false);
         m_OptionsMenuCanvas.SetActive(false);
         m_InputMenuCanvas.SetActive(false);
         m_VideoMenuCanvas.SetActive(false);
-        m_EventSystem.SetSelectedGameObject(GameObject.Find("Continue"));
+        m_EventSystem.SetSelectedGameObject(GameObject.Find("Play"));
     }
 
     void OnEnable()
     {
-        m_EventSystem.SetSelectedGameObject(GameObject.Find("Continue"));
+        m_EventSystem.SetSelectedGameObject(GameObject.Find("Play"));
     }
 
     public void Continue(Object aSceneToLoad)
     {
         GameManager.Instance.m_SceneToLoad = aSceneToLoad.name;
         Notify(gameObject, GameEvent.LoadingScene);
-    }
-
-    public void NewGame()
-    {
-        gameObject.SetActive(false);
-        m_NewGameMenuCanvas.SetActive(true);
-    }
-
-    public void LoadGame()
-    {
-        gameObject.SetActive(false);
-        m_LoadGameMenuCanvas.SetActive(true);
     }
 
     public void LevelSelect()
