@@ -6,8 +6,9 @@ public class BasicChildrenAI : MonoBehaviour
     public enum ChildState { Free, Interacting, Chase, Search, Ritual }
     [SerializeField] ChildState m_ChildState;
 
-    public IRitual Ritual;
 
+    public IRitual Ritual;
+    
 
     public Boredom m_Boredom;
     Timer m_Timer;
@@ -90,7 +91,7 @@ public class BasicChildrenAI : MonoBehaviour
                 {
                     target = (AIUtils.ReturnRandomLocation(transform.position, 25.0f));
                     counter++;
-                    if (counter > 500)
+                    if (counter > 5000)
                     {
                         Debug.LogError("Stuck in While Loop");
                         break;
@@ -207,6 +208,11 @@ public class BasicChildrenAI : MonoBehaviour
                 break;
 
             case ChildState.Ritual:
+                if((transform.position - m_Agent.destination).magnitude < 1.0f)
+                {
+                    InitState(ChildState.Ritual);
+                }
+
                 //Wait for Timer
                 if(Ritual.Ended)
                 {

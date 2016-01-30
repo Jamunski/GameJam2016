@@ -10,7 +10,7 @@ public class TestManager : MonoBehaviour
     public RitualManager m_RitualManager;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         m_TimeSystem = new TimeSystem();
         m_RitualManager = new RitualManager();

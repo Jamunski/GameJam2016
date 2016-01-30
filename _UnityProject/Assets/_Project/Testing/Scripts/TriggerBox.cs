@@ -8,6 +8,17 @@ public class TriggerBox : MonoBehaviour
 
     void OnTriggerEnter(Collider aCollider)
     {
-        KeyObjectIsIn = (aCollider.gameObject == KeyObject);
+        if(aCollider.gameObject == KeyObject)
+        {
+            KeyObjectIsIn = true;
+        }
+    }
+
+    void OnTriggerExit(Collider aCollider)
+    {
+        if (aCollider.gameObject == KeyObject)
+        {
+            KeyObjectIsIn = false;
+        }
     }
 }

@@ -78,7 +78,7 @@ public class AIUtils
     public static Vector3 ReturnRandomLocation(Vector3 aPosition, float aRange)
     {
         Vector3 randomPoint = aPosition + Random.insideUnitSphere * aRange;
-        randomPoint.y = 0;
+
         Debug.DrawRay(randomPoint, Vector3.up * 3.0f, Color.red, 5.0f);
 
         NavMeshHit hitInfo;
