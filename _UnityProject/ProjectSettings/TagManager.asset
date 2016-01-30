@@ -8,6 +8,8 @@ TagManager:
   - Light
   - Ammo
   - Mana
+  - Distraction
+  - Manager
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - Players
   - Buildings
   - Lights
-  - 
-  - 
+  - Distractables
+  - Child
   - 
   - 
   - 
