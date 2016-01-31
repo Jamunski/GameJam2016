@@ -89,7 +89,8 @@ public class Actor : MonoBehaviourSubject
 	private void UpdateMovementInput()
 	{
 		// Movement
-		if (m_Input.Movement().magnitude != 0) { Movement(new Vector3(m_Input.Movement().x, m_Input.Movement().y, 0.0f)); }
+        if (m_Input.Movement().magnitude != 0) { Movement(new Vector3(m_Input.Movement().x, m_Input.Movement().y, 0.0f)); }
+        else { Movement(new Vector3(0, 0, 0)); }
 
 		// Camera
 		if (m_Input.Camera().magnitude != 0) { Camera(new Vector3(m_Input.Camera().x, m_Input.Camera().y, 0.0f)); }
