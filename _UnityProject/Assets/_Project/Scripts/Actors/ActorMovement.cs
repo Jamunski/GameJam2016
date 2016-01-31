@@ -38,7 +38,7 @@ public class ActorMovement : MonoBehaviour
     //public Methods
     public void Movement(Vector3 aInput)
     {
-        m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
+        
         try
         {
             if (aInput != Vector3.zero)
@@ -49,49 +49,56 @@ public class ActorMovement : MonoBehaviour
                 currentSpeed += accel * Time.fixedDeltaTime;
                 currentSpeed = Mathf.Clamp(currentSpeed, 0, m_Player.m_Statistics.m_FinalSpeed);
 
+                float oldVelY = m_Velocity.y;
                 m_Velocity = (Vector3.ProjectOnPlane(m_Camera.transform.forward,Vector3.up).normalized * -aInput.y * currentSpeed);
-                m_Velocity.y = 0;
+                
+                if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,LayerMask.GetMask("Camera Obstacle")))
+                    m_Velocity.y = oldVelY + Physics.gravity.y * Time.fixedDeltaTime;
+
+                //m_Velocity.y = 0;
                 //Vector3.Normalize(m_Velocity);
                 m_Animator.SetBool("isWalking", true);
             }
             else
             {
-                if(m_Velocity.magnitude <0.1f)
-                {
-                    m_Velocity = Vector3.zero;
-                }
-                else
-                {
-                     //Clamp shit
-                    float velX = m_Velocity.x;
-                    float velZ = m_Velocity.z;
+                //if(m_Velocity.magnitude <0.1f)
+                //{
+                    m_Velocity = new Vector3(0,m_Velocity.y, 0);
+                //}
+                //else
+                //{
+                //    // //Clamp shit
+                    //float velX = m_Velocity.x;
+                    //float velZ = m_Velocity.z;
 
 
-                    if (velX < 0)
-                    {
-                        velX = Mathf.Clamp(velX, -m_Player.m_Statistics.m_FinalSpeed, 0);
-                    }
-                    else
-                    {
-                        velX = Mathf.Clamp(velX, 0, m_Player.m_Statistics.m_FinalSpeed);
-                    }
+                    //if (velX < 0)
+                    //{
+                    //    velX = Mathf.Clamp(velX, -m_Player.m_Statistics.m_FinalSpeed, 0);
+                    //}
+                    //else
+                    //{
+                    //    velX = Mathf.Clamp(velX, 0, m_Player.m_Statistics.m_FinalSpeed);
+                    //}
 
-                    if (velZ < 0)
-                    {
-                        velZ = Mathf.Clamp(velZ, -m_Player.m_Statistics.m_FinalSpeed, 0);
-                    }
-                    else
-                    {
-                        velZ = Mathf.Clamp(velZ, 0, m_Player.m_Statistics.m_FinalSpeed);
-                    }
+                    //if (velZ < 0)
+                    //{
+                    //    velZ = Mathf.Clamp(velZ, -m_Player.m_Statistics.m_FinalSpeed, 0);
+                    //}
+                    //else
+                    //{
+                    //    velZ = Mathf.Clamp(velZ, 0, m_Player.m_Statistics.m_FinalSpeed);
+                    //}
                     
 
-                    m_Velocity = new Vector3(Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5), m_Velocity.y, Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5));
+                    //m_Velocity = new Vector3(Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5), m_Velocity.y, Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5));
                    
-                    m_Velocity = new Vector3(velX, m_Velocity.y, velZ);
+                    //m_Velocity = new Vector3(velX, m_Velocity.y, velZ);
+
+                    m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
 
                     m_Animator.SetBool("isWalking", false);
-                }
+                //}
                
             }
             
