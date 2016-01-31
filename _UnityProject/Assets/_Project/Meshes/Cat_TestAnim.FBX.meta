@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: ea8202f9d0ef037418d5929acc442b6a
+timeCreated: 1454194007
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Loft002
+    100004: PantherHead001
+    100006: PantherLLeg004
+    100008: PantherLLeg005
+    100010: PantherLLeg006
+    100012: PantherLLeg2
+    100014: PantherLLegDigit023
+    100016: PantherLLegDigit11
+    100018: PantherLLegPalm001
+    100020: PantherLLegPalm002
+    100022: PantherNeck006
+    100024: PantherNeck007
+    100026: PantherNeck008
+    100028: PantherNeck009
+    100030: PantherNeck010
+    100032: PantherPelvis001
+    100034: PantherRibcage001
+    100036: PantherRLeg004
+    100038: PantherRLeg005
+    100040: PantherRLeg006
+    100042: PantherRLeg2
+    100044: PantherRLegDigit022
+    100046: PantherRLegDigit21
+    100048: PantherRLegPalm001
+    100050: PantherRLegPalm002
+    100052: PantherSpine007
+    100054: PantherSpine008
+    100056: PantherSpine009
+    100058: PantherSpine010
+    100060: PantherSpine011
+    100062: PantherSpine012
+    100064: PantherTail1
+    100066: PantherTail2
+    100068: PantherTail3
+    100070: PantherTail4
+    100072: PantherTail5
+    100074: PantherTail6
+    100076: PantherTail7
+    400000: //RootNode
+    400002: Loft002
+    400004: PantherHead001
+    400006: PantherLLeg004
+    400008: PantherLLeg005
+    400010: PantherLLeg006
+    400012: PantherLLeg2
+    400014: PantherLLegDigit023
+    400016: PantherLLegDigit11
+    400018: PantherLLegPalm001
+    400020: PantherLLegPalm002
+    400022: PantherNeck006
+    400024: PantherNeck007
+    400026: PantherNeck008
+    400028: PantherNeck009
+    400030: PantherNeck010
+    400032: PantherPelvis001
+    400034: PantherRibcage001
+    400036: PantherRLeg004
+    400038: PantherRLeg005
+    400040: PantherRLeg006
+    400042: PantherRLeg2
+    400044: PantherRLegDigit022
+    400046: PantherRLegDigit21
+    400048: PantherRLegPalm001
+    400050: PantherRLegPalm002
+    400052: PantherSpine007
+    400054: PantherSpine008
+    400056: PantherSpine009
+    400058: PantherSpine010
+    400060: PantherSpine011
+    400062: PantherSpine012
+    400064: PantherTail1
+    400066: PantherTail2
+    400068: PantherTail3
+    400070: PantherTail4
+    400072: PantherTail5
+    400074: PantherTail6
+    400076: PantherTail7
+    4300000: Loft002
+    7400000: Walking
+    7400002: Idle
+    9500000: //RootNode
+    13700000: Loft002
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walking
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 49
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Loft002
+        weight: 1
+      - path: PantherPelvis001
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005/PantherLLegPalm002
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005/PantherLLegPalm002/PantherLLegDigit023
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005/PantherRLegPalm002
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005/PantherRLegPalm002/PantherRLegDigit21
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2/PantherLLegPalm001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2/PantherLLegPalm001/PantherLLegDigit11
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006/PantherNeck007
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006/PantherNeck007/PantherHead001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2/PantherRLegPalm001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2/PantherRLegPalm001/PantherRLegDigit022
+        weight: 1
+      - path: PantherPelvis001/PantherTail1
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: Idle
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 0
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Loft002
+        weight: 1
+      - path: PantherPelvis001
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005/PantherLLegPalm002
+        weight: 1
+      - path: PantherPelvis001/PantherLLeg006/PantherLLeg005/PantherLLegPalm002/PantherLLegDigit023
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005/PantherRLegPalm002
+        weight: 1
+      - path: PantherPelvis001/PantherRLeg006/PantherRLeg005/PantherRLegPalm002/PantherRLegDigit21
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2/PantherLLegPalm001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherLLeg004/PantherLLeg2/PantherLLegPalm001/PantherLLegDigit11
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006/PantherNeck007
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherNeck010/PantherNeck009/PantherNeck008/PantherNeck006/PantherNeck007/PantherHead001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2/PantherRLegPalm001
+        weight: 1
+      - path: PantherPelvis001/PantherSpine010/PantherSpine009/PantherSpine007/PantherSpine008/PantherSpine011/PantherSpine012/PantherRibcage001/PantherRLeg004/PantherRLeg2/PantherRLegPalm001/PantherRLegDigit022
+        weight: 1
+      - path: PantherPelvis001/PantherTail1
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6
+        weight: 1
+      - path: PantherPelvis001/PantherTail1/PantherTail2/PantherTail3/PantherTail4/PantherTail5/PantherTail6/PantherTail7
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

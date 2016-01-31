@@ -13,9 +13,10 @@ public class ActorMovement : MonoBehaviour
 {
     //private Member variables
     private Actor m_Player = null;
+    private Animator m_Animator;
     private FollowCamera m_Camera;
     private Rigidbody m_PlayerRigidBody = null;
-    private float m_RotationSpeed = Mathf.PI * 60;
+    private float m_RotationSpeed = Mathf.PI * 30;
     Vector3 m_Velocity = Vector3.zero;
 
     //Unity Callbacks
@@ -25,6 +26,8 @@ public class ActorMovement : MonoBehaviour
         m_PlayerRigidBody = GetComponent<Rigidbody>();
 
         m_Camera = m_Player.m_Camera;
+
+        m_Animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -35,23 +38,63 @@ public class ActorMovement : MonoBehaviour
     //public Methods
     public void Movement(Vector3 aInput)
     {
+        m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
         try
         {
             if (aInput != Vector3.zero)
             {
-                m_Velocity = (m_Camera.transform.forward * -aInput.y * m_Player.m_Statistics.m_FinalSpeed);
+                float currentSpeed = m_Velocity.magnitude;
+                float accel = 5f;
+
+                currentSpeed += accel * Time.fixedDeltaTime;
+                currentSpeed = Mathf.Clamp(currentSpeed, 0, m_Player.m_Statistics.m_FinalSpeed);
+
+                m_Velocity = (Vector3.ProjectOnPlane(m_Camera.transform.forward,Vector3.up).normalized * -aInput.y * currentSpeed);
                 m_Velocity.y = 0;
-                Vector3.Normalize(m_Velocity);
+                //Vector3.Normalize(m_Velocity);
+                m_Animator.SetBool("isWalking", true);
             }
             else
             {
-                m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
-                m_Velocity = new Vector3(Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5), m_Velocity.y, Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5));
+                if(m_Velocity.magnitude <0.1f)
+                {
+                    m_Velocity = Vector3.zero;
+                }
+                else
+                {
+                     //Clamp shit
+                    float velX = m_Velocity.x;
+                    float velZ = m_Velocity.z;
+
+
+                    if (velX < 0)
+                    {
+                        velX = Mathf.Clamp(velX, -m_Player.m_Statistics.m_FinalSpeed, 0);
+                    }
+                    else
+                    {
+                        velX = Mathf.Clamp(velX, 0, m_Player.m_Statistics.m_FinalSpeed);
+                    }
+
+                    if (velZ < 0)
+                    {
+                        velZ = Mathf.Clamp(velZ, -m_Player.m_Statistics.m_FinalSpeed, 0);
+                    }
+                    else
+                    {
+                        velZ = Mathf.Clamp(velZ, 0, m_Player.m_Statistics.m_FinalSpeed);
+                    }
+                    
+
+                    m_Velocity = new Vector3(Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5), m_Velocity.y, Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5));
+                   
+                    m_Velocity = new Vector3(velX, m_Velocity.y, velZ);
+
+                    m_Animator.SetBool("isWalking", false);
+                }
+               
             }
             
-
-            
-
             Vector3 cameraVector = new Vector3(m_Camera.transform.forward.x, 0, m_Camera.transform.forward.z);
             transform.rotation = Quaternion.LookRotation(cameraVector);
         }
@@ -77,8 +120,8 @@ public class ActorMovement : MonoBehaviour
 
             newRotation = Quaternion.Euler(new Vector3(aInput.y * Time.fixedDeltaTime * m_RotationSpeed, aInput.x * Time.fixedDeltaTime * m_RotationSpeed, 0));
 
-            m_Camera.m_CameraRotationY = newRotation.eulerAngles.y;
-            m_Camera.m_CameraRotationX = -newRotation.eulerAngles.x;
+            m_Camera.m_CameraRotationY = aInput.x * Time.fixedDeltaTime * m_RotationSpeed;
+            m_Camera.m_CameraRotationX = -aInput.y * Time.fixedDeltaTime * m_RotationSpeed;
         }
         catch
         {

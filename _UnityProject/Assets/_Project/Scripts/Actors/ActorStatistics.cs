@@ -53,7 +53,7 @@ public class ActorStatistics
 
 	private void InitializeStats()
 	{
-		m_Stats.Speed = 20.0f;
+		m_Stats.Speed = 5.0f;
 	}
 
 	private void InitializePools()
