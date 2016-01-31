@@ -29,6 +29,8 @@ public class Actor : MonoBehaviourSubject
 
 	public FollowCamera m_Camera;
 
+    public GameObject Face;
+
 	public HUD m_HUD;
 
 	//Unity Callbacks
@@ -80,6 +82,10 @@ public class Actor : MonoBehaviourSubject
 		else { m_Statistics.m_IsSprinting = false; m_Statistics.CalculateSpeed(); }
 
 		if (m_Input.Carry() != 0) { Carry(); }
+        else if (m_Abilities.isHoldingObject == true)
+        {
+            m_Abilities.HoldingItem();
+        }
 
 		if (m_Input.Pause() != 0) { Pause(); }
 
