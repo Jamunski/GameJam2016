@@ -26,13 +26,14 @@ public class ActorAbilities : MonoBehaviour
 
     public void Sprint()
     {
+		Debug.Log(gameObject.name + ": Sprint");
         m_Stats.m_IsSprinting = true;
         m_Stats.CalculateSpeed();
     }
 
-    public void Attack()
+    public void Carry()
     {
-        Debug.Log(gameObject.name + ": Attack");
+        Debug.Log(gameObject.name + ": Carry");
     }
 
     public void Magic()

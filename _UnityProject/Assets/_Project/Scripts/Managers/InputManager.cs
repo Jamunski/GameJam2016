@@ -54,8 +54,7 @@ public struct InputStrings
     public string InteractInput;
     public string JumpInput;
     public string SprintInput;
-    public string AttackInput;
-    public string MagicInput;
+    public string CarryInput;
 
     public string PauseInput;
     public string HelpInput;
@@ -474,9 +473,8 @@ public class InputManager : Observer
 
             aInputStrings.InteractInput = InputXBOXControlsArray[(int)InputXBOXControls.X];
             aInputStrings.JumpInput = InputXBOXControlsArray[(int)InputXBOXControls.A];
-            aInputStrings.SprintInput = InputXBOXControlsArray[(int)InputXBOXControls.Y];
-            aInputStrings.AttackInput = InputXBOXControlsArray[(int)InputXBOXControls.RightTrigger];
-            aInputStrings.MagicInput = InputXBOXControlsArray[(int)InputXBOXControls.LeftTrigger];
+            aInputStrings.SprintInput = InputXBOXControlsArray[(int)InputXBOXControls.LeftTrigger];
+            aInputStrings.CarryInput = InputXBOXControlsArray[(int)InputXBOXControls.Y];
 
             aInputStrings.PauseInput = InputXBOXControlsArray[(int)InputXBOXControls.Start];
             aInputStrings.HelpInput = InputXBOXControlsArray[(int)InputXBOXControls.Back];
@@ -488,11 +486,10 @@ public class InputManager : Observer
             aInputStrings.CameraXInput = InputPCControlsArray[(int)InputPCControls.MouseX];
             aInputStrings.CameraYInput = InputPCControlsArray[(int)InputPCControls.MouseY];
 
-            aInputStrings.InteractInput = InputPCControlsArray[(int)InputPCControls.E];
+            aInputStrings.InteractInput = InputPCControlsArray[(int)InputPCControls.MouseLeftClick];
             aInputStrings.JumpInput = InputPCControlsArray[(int)InputPCControls.Space];
-            aInputStrings.SprintInput = InputPCControlsArray[(int)InputPCControls.C];
-            aInputStrings.AttackInput = InputPCControlsArray[(int)InputPCControls.MouseRightClick];
-            aInputStrings.MagicInput = InputPCControlsArray[(int)InputPCControls.MouseLeftClick];
+            aInputStrings.SprintInput = InputPCControlsArray[(int)InputPCControls.LeftShift];
+            aInputStrings.CarryInput = InputPCControlsArray[(int)InputPCControls.MouseRightClick];
 
             aInputStrings.PauseInput = InputPCControlsArray[(int)InputPCControls.Escape];
             aInputStrings.HelpInput = InputPCControlsArray[(int)InputPCControls.Tab];

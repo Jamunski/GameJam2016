@@ -16,16 +16,14 @@ public class PlayerInput : MonoBehaviour
 
     private bool isInteractPressed;
     private bool isJumpPressed;
-    private bool isAttackPressed;
-    private bool isMagicPressed;
+    private bool isCarryPressed;
     private bool isPausePressed;
     private bool isHelpPressed;
 
     private float InteractValueLastFrame;
     private float JumpValueLastFrame;
     private float SprintValueLastFrame;
-    private float AttackValueLastFrame;
-    private float MagicValueLastFrame;
+    private float CarryValueLastFrame;
     private float PauseValueLastFrame;
     private float HelpValueLastFrame;
 
@@ -58,9 +56,7 @@ public class PlayerInput : MonoBehaviour
 
     public float Sprint() { return Input.GetAxis(InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType + ((InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType == InputType.Joystick && InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PlayerNumber != PlayerNumber.God) ? (InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].JoystickNumber.ToString()) : "") + "_" + InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].SprintInput); }
 
-    public float Attack() { return AxisDown(Input.GetAxis(InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType + ((InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType == InputType.Joystick && InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PlayerNumber != PlayerNumber.God) ? (InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].JoystickNumber.ToString()) : "") + "_" + InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].AttackInput), ref isAttackPressed, ref AttackValueLastFrame); }
-
-    public float Magic() { return AxisDown(Input.GetAxis(InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType + ((InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType == InputType.Joystick && InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PlayerNumber != PlayerNumber.God) ? (InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].JoystickNumber.ToString()) : "") + "_" + InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].MagicInput), ref isMagicPressed, ref MagicValueLastFrame); }
+    public float Carry() { return AxisDown(Input.GetAxis(InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType + ((InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType == InputType.Joystick && InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PlayerNumber != PlayerNumber.God) ? (InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].JoystickNumber.ToString()) : "") + "_" + InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].CarryInput), ref isCarryPressed, ref CarryValueLastFrame); }
 
     public float Pause() { return AxisDown(Input.GetAxis(InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType + ((InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].InputType == InputType.Joystick && InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PlayerNumber != PlayerNumber.God) ? (InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].JoystickNumber.ToString()) : "") + "_" + InputManager.Instance.m_InputStrings[(int)m_Player.PlayerNumber].PauseInput), ref isPausePressed, ref PauseValueLastFrame); }
 

@@ -37,7 +37,7 @@ public class PauseInputMenu : MonoBehaviour
         m_InteractText = GameObject.Find("Interact").GetComponentInChildren<Text>();
         m_JumpText = GameObject.Find("Jump").GetComponentInChildren<Text>();
         m_SprintText = GameObject.Find("Sprint").GetComponentInChildren<Text>();
-        m_AttackText = GameObject.Find("Attack").GetComponentInChildren<Text>();
+        m_AttackText = GameObject.Find("Carry").GetComponentInChildren<Text>();
         m_PauseText = GameObject.Find("Pause").GetComponentInChildren<Text>();
         m_HelpText = GameObject.Find("Help").GetComponentInChildren<Text>();
     }
@@ -55,7 +55,7 @@ public class PauseInputMenu : MonoBehaviour
         m_InteractText.text = "Interact: " + m_Player.InteractInput;
         m_JumpText.text = "Jump: " + m_Player.JumpInput;
         m_SprintText.text = "Sprint: " + m_Player.SprintInput;
-        m_AttackText.text = "Attack: " + m_Player.AttackInput;
+        m_AttackText.text = "Carry: " + m_Player.CarryInput;
         m_PauseText.text = "Pause: " + m_Player.PauseInput;
         m_HelpText.text = "Help: " + m_Player.HelpInput;
     }
@@ -117,10 +117,10 @@ public class PauseInputMenu : MonoBehaviour
 
     public void Attack(Button aButton)
     {
-        if (aButton.name == "Attack")
+        if (aButton.name == "Carry")
         {
             //InputManager.Instance.SetInputString(ref m_Player1.AttackInput);
-            aButton.GetComponentInChildren<Text>().text = "Attack: " + m_Player.AttackInput;
+            aButton.GetComponentInChildren<Text>().text = "Carry: " + m_Player.CarryInput;
         }
     }
 

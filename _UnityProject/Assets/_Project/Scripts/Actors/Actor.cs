@@ -46,36 +46,40 @@ public class Actor : MonoBehaviourSubject
 	void OnEnable()
 	{
 		AddActorComponents();
-		AddInputScript();
+		if (PlayerNumber != PlayerNumber.AI) //Probable temp???
+		{
+			AddInputScript();
+		}
 	}
 
 	void Update()
 	{
-		UpdateButtonInput();
+		if (m_Statistics.m_Pools.Health > 0 && PlayerNumber != PlayerNumber.AI) //Probable temp???
+		{
+			UpdateButtonInput();
+		}
 	}
 
 	void FixedUpdate()
 	{
-		UpdateMovementInput();
+		if (m_Statistics.m_Pools.Health > 0 && PlayerNumber != PlayerNumber.AI) //Probable temp???
+		{
+			UpdateMovementInput();
+		}
 	}
 
 	// private Methods
 	private void UpdateButtonInput()
 	{
-		if (m_Statistics.m_Pools.Health > 0) //Probable temp???
-		{
-			// Button Input
-			if (m_Input.Interact() != 0) { Interact(); }
+		// Button Input
+		if (m_Input.Interact() != 0) { Interact(); }
 
-			if (m_Input.Jump() != 0) { Jump(); }
+		if (m_Input.Jump() != 0) { Jump(); }
 
-			if (m_Input.Sprint() != 0) { Sprint(); }
-			else { m_Statistics.m_IsSprinting = false; m_Statistics.CalculateSpeed(); }
+		if (m_Input.Sprint() != 0) { Sprint(); }
+		else { m_Statistics.m_IsSprinting = false; m_Statistics.CalculateSpeed(); }
 
-			if (m_Input.Attack() != 0) { Attack(); }
-
-			if (m_Input.Magic() != 0) { Magic(); }
-		}
+		if (m_Input.Carry() != 0) { Carry(); }
 
 		if (m_Input.Pause() != 0) { Pause(); }
 
@@ -84,14 +88,11 @@ public class Actor : MonoBehaviourSubject
 
 	private void UpdateMovementInput()
 	{
-		if (m_Statistics.m_Pools.Health > 0) //Probable temp???
-		{
-			// Movement
-			if (m_Input.Movement().magnitude != 0) { Movement(new Vector3(m_Input.Movement().x, m_Input.Movement().y, 0.0f)); }
+		// Movement
+		if (m_Input.Movement().magnitude != 0) { Movement(new Vector3(m_Input.Movement().x, m_Input.Movement().y, 0.0f)); }
 
-			// Camera
-			if (m_Input.Camera().magnitude != 0) { Camera(new Vector3(m_Input.Camera().x, m_Input.Camera().y, 0.0f)); }
-		}
+		// Camera
+		if (m_Input.Camera().magnitude != 0) { Camera(new Vector3(m_Input.Camera().x, m_Input.Camera().y, 0.0f)); }
 	}
 
 	//private Methods
@@ -134,9 +135,9 @@ public class Actor : MonoBehaviourSubject
 		m_Abilities.Sprint();
 	}
 
-	public void Attack()
+	public void Carry()
 	{
-		m_Abilities.Attack();
+		m_Abilities.Carry();
 	}
 
 	public void Magic()

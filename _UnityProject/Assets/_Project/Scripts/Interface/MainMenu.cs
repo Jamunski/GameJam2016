@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviourSubject
 {
     private GameObject m_NewGameMenuCanvas;
     private GameObject m_LoadGameMenuCanvas;
-    private GameObject m_LevelSelectMenuCanvas;
     private GameObject m_OptionsMenuCanvas;
     private GameObject m_InputMenuCanvas;
     private GameObject m_VideoMenuCanvas;
@@ -31,11 +30,9 @@ public class MainMenu : MonoBehaviourSubject
     {
         m_NewGameMenuCanvas = GameObject.Find("NewGameMenu");
         m_LoadGameMenuCanvas = GameObject.Find("LoadGameMenu");
-        m_LevelSelectMenuCanvas = GameObject.Find("LevelSelectMenu");
         m_OptionsMenuCanvas = GameObject.Find("OptionsMenu");
         m_InputMenuCanvas = GameObject.Find("InputMenu");
         m_VideoMenuCanvas = GameObject.Find("VideoMenu");
-        m_LevelSelectMenuCanvas.SetActive(false);
         m_OptionsMenuCanvas.SetActive(false);
         m_InputMenuCanvas.SetActive(false);
         m_VideoMenuCanvas.SetActive(false);
@@ -51,12 +48,6 @@ public class MainMenu : MonoBehaviourSubject
     {
         GameManager.Instance.m_SceneToLoad = aSceneToLoad.name;
         Notify(gameObject, GameEvent.LoadingScene);
-    }
-
-    public void LevelSelect()
-    {
-        gameObject.SetActive(false);
-        m_LevelSelectMenuCanvas.SetActive(true);
     }
 
     public void Options()
