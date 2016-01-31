@@ -31,8 +31,8 @@ public class ActorAbilities : MonoBehaviour
         m_Stats = GetComponent<Actor>().m_Statistics;
 		m_Movement = GetComponent<ActorMovement> ();
 		m_JumpCR = null;
-		JumpHeight = 2;
-		JumpSpeed = 2;
+		JumpHeight = 6;
+		JumpSpeed = 10;
         m_Player = gameObject.GetComponent<Actor>();
         PickableObjects = LayerMask.GetMask("PickUps");
     }
