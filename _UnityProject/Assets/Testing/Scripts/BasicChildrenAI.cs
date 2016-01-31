@@ -8,7 +8,8 @@ public class BasicChildrenAI : MonoBehaviour
 
 
     public IRitual Ritual;
-    
+
+    public Animator Animator;
 
     public Boredom m_Boredom;
     Timer m_Timer;
@@ -74,6 +75,11 @@ public class BasicChildrenAI : MonoBehaviour
         //Debug.Log(AIUtils.CanSeeTarget(transform.position, m_Target.transform.position, 25.0f, m_Target.tag));
         //Debug.Log(AIUtils.InFrontOfTarget(transform.forward, transform.position, m_Target.transform.position, 0.5f));
         //transform.position += transform.forward * Time.deltaTime;
+    }
+
+    public ChildState GetChildState()
+    {
+        return m_ChildState;
     }
 
     public void InitState(ChildState aState)
@@ -211,6 +217,9 @@ public class BasicChildrenAI : MonoBehaviour
             case ChildState.Ritual:
                 if((transform.position - m_Agent.destination).magnitude < 1.0f)
                 {
+                    //Set animation
+                    Animator.SetBool("ritualIsOn", true);
+
                     InitState(ChildState.Ritual);
                 }
 
@@ -220,6 +229,9 @@ public class BasicChildrenAI : MonoBehaviour
                 //Replenish Boredom
                     m_Boredom.ReplenishBoredom();
                     Ritual.Condition();
+
+                    //Set animation
+                    Animator.SetBool("ritualIsOn",false);
 
                     InitState(ChildState.Free);
                 }
