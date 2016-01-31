@@ -31,16 +31,17 @@ public class BasicChildrenAI : MonoBehaviour
     const int INTERACT_WITH_HOUSEHOLD_OBEJCT = 50;
 
     //Movement Speeds
-    const float MIN_RANGE_OF_NEUTRAL_SPEEDS = 5.0f;
-    const float MAX_RANGE_OF_NEUTRAL_SPEEDS = 8.0f;
+    const float MIN_RANGE_OF_NEUTRAL_SPEEDS = 1.0f;
+    const float MAX_RANGE_OF_NEUTRAL_SPEEDS = 3.0f;
 
-    const float CHASE_SPEED = 15.0f;
+    const float CHASE_SPEED = 5.0f;
 
     //Search Statistics
-    const float INTERACTION_RANGE = 5.0f;
+    const float INTERACTION_RANGE = 2.5f;
     const float VISION_CONE = 0.2f;
-    const float VISION_RANGE = 25.0f;
+    const float VISION_RANGE = 10.0f;
 
+    const float TRAVEL_RANGE = 8.0f;
 
 
     // Use this for initialization
@@ -89,7 +90,7 @@ public class BasicChildrenAI : MonoBehaviour
                 int counter = 0;
                 while (target == Vector3.zero)
                 {
-                    target = (AIUtils.ReturnRandomLocation(transform.position, 25.0f));
+                    target = (AIUtils.ReturnRandomLocation(transform.position, TRAVEL_RANGE));
                     counter++;
                     if (counter > 5000)
                     {
@@ -151,7 +152,7 @@ public class BasicChildrenAI : MonoBehaviour
                 //Detect Distance from Target
                 if ((transform.position - m_Agent.destination).magnitude <= 1.0f)
                 {
-                    if (m_Timer.Delay(3.0f, Time.deltaTime))
+                    if (m_Timer.Delay(Random.Range(0.0f,3.0f), Time.deltaTime))
                     {
                         InitState(ChildState.Free);
                     }
@@ -339,7 +340,7 @@ public class BasicChildrenAI : MonoBehaviour
     void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.5f);
+        Gizmos.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.25f);
 
         Gizmos.DrawSphere(transform.position, INTERACTION_RANGE);
     }
