@@ -108,7 +108,7 @@ public class FollowCamera : MonoBehaviour, ICamera
 
         rayDir /= rayDist;
 
-        RaycastHit[] hitInfos = Physics.SphereCastAll(rayStart, 0.1f, rayDir, rayDist, LayerMask.GetMask("Camera Obstacle"));
+        RaycastHit[] hitInfos = Physics.SphereCastAll(rayStart, 0.2f, rayDir, rayDist, LayerMask.GetMask("Camera Obstacle"));
         if (hitInfos.Length <= 0)
         {
             return;
@@ -133,7 +133,7 @@ public class FollowCamera : MonoBehaviour, ICamera
         //Move the camera up by the minimum distance
         if (minMoveUpDist < float.MaxValue)
         {
-            transform.position = rayStart + rayDir * (minMoveUpDist + Camera.main.nearClipPlane * 2);
+            transform.position = rayStart + rayDir * (minMoveUpDist - Camera.main.nearClipPlane*2);
 
         }
     }

@@ -52,14 +52,18 @@ public class ActorMovement : MonoBehaviour
                 float oldVelY = m_Velocity.y;
                 m_Velocity = (Vector3.ProjectOnPlane(m_Camera.transform.forward,Vector3.up).normalized * -aInput.y * currentSpeed);
                 
-				if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,LayerMask.GetMask("Camera Obstacle")) && 
-				   GetComponent<ActorAbilities>().m_JumpCR != null)
+				if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,~LayerMask.GetMask("Ignore Raycast")) && 
+				   GetComponent<ActorAbilities>().m_JumpCR == null)
 				{
                     m_Velocity.y = oldVelY + Physics.gravity.y * Time.fixedDeltaTime;
 				}
 				else if(GetComponent<ActorAbilities>().m_JumpCR != null)
 				{
 					m_Velocity.y = oldVelY;
+				}
+				else
+				{
+					m_Velocity.y = 0;
 				}
 
                 //m_Velocity.y = 0;
