@@ -17,7 +17,7 @@ public class ActorMovement : MonoBehaviour
     private FollowCamera m_Camera;
     private Rigidbody m_PlayerRigidBody = null;
     private float m_RotationSpeed = Mathf.PI * 30;
-    Vector3 m_Velocity = Vector3.zero;
+    public Vector3 m_Velocity = Vector3.zero;
 
     //Unity Callbacks
     void Start()
@@ -52,8 +52,15 @@ public class ActorMovement : MonoBehaviour
                 float oldVelY = m_Velocity.y;
                 m_Velocity = (Vector3.ProjectOnPlane(m_Camera.transform.forward,Vector3.up).normalized * -aInput.y * currentSpeed);
                 
-                if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,LayerMask.GetMask("Camera Obstacle")))
+				if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,LayerMask.GetMask("Camera Obstacle")) && 
+				   GetComponent<ActorAbilities>().m_JumpCR != null)
+				{
                     m_Velocity.y = oldVelY + Physics.gravity.y * Time.fixedDeltaTime;
+				}
+				else if(GetComponent<ActorAbilities>().m_JumpCR != null)
+				{
+					m_Velocity.y = oldVelY;
+				}
 
                 //m_Velocity.y = 0;
                 //Vector3.Normalize(m_Velocity);
@@ -94,8 +101,13 @@ public class ActorMovement : MonoBehaviour
                     //m_Velocity = new Vector3(Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5), m_Velocity.y, Mathf.Lerp(m_Velocity.x, 0, Time.fixedDeltaTime * 5));
                    
                     //m_Velocity = new Vector3(velX, m_Velocity.y, velZ);
-
-                    m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
+				if(GetComponent<ActorAbilities>().m_JumpCR == null)
+				{
+					if(!Physics.Raycast(transform.position,Vector3.down, 0.22f,LayerMask.GetMask("Camera Obstacle")))
+                    	m_Velocity.y += Physics.gravity.y * Time.fixedDeltaTime;
+					else
+						m_Velocity.y = 0;
+				}
 
                     m_Animator.SetBool("isWalking", false);
                 //}

@@ -16,12 +16,23 @@ public class ActorAbilities : MonoBehaviour
     private Actor m_Player;
     public bool isHoldingObject = false;
 
+	ActorMovement m_Movement;
+
+	public Coroutine m_JumpCR;
+
+	public float JumpHeight;
+	public float JumpSpeed;
+
     LayerMask PickableObjects;
 
 
     void Start()
     {
         m_Stats = GetComponent<Actor>().m_Statistics;
+		m_Movement = GetComponent<ActorMovement> ();
+		m_JumpCR = null;
+		JumpHeight = 2;
+		JumpSpeed = 2;
         m_Player = gameObject.GetComponent<Actor>();
         PickableObjects = LayerMask.GetMask("PickUps");
     }
@@ -29,6 +40,13 @@ public class ActorAbilities : MonoBehaviour
     public void Jump()
     {
         Debug.Log(gameObject.name + ": Jump");
+
+		if (m_JumpCR == null) 
+		{
+			Debug.Log("Jump Started");
+			m_JumpCR = StartCoroutine (jump_cr ());
+		}
+
     }
 
     public void Sprint()
@@ -114,4 +132,20 @@ public class ActorAbilities : MonoBehaviour
         }
 
     }
+
+	IEnumerator jump_cr()
+	{
+		float time = Mathf.Sqrt(JumpHeight)/JumpSpeed;
+		float t = -Mathf.Sqrt(JumpHeight)/JumpSpeed;
+
+		while (t<time) 
+		{
+			t+=Time.deltaTime;
+			float yVel = (-t*t*JumpSpeed)+ JumpHeight;
+			m_Movement.m_Velocity = new Vector3 (m_Movement.m_Velocity.x, - Mathf.Sign(t) * yVel, m_Movement.m_Velocity.z);
+			yield return null;
+		}
+
+		m_JumpCR = null;
+	}
 }

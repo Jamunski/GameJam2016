@@ -125,7 +125,7 @@ public class FollowCamera : MonoBehaviour, ICamera
             {
                 continue;
             }
-            Debug.Log("Obstacle found!" + hitInfo.collider.gameObject.name);
+            //Debug.Log("Obstacle found!" + hitInfo.collider.gameObject.name);
             minMoveUpDist = moveUpDist;
 
         }
